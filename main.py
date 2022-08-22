@@ -43,7 +43,7 @@ def menu():
 
 
 def create_file():
-    with open('Hola, tu computadora infectada.txt', 'w') as file:
+    with open('Hello, your computer is in danger!.txt', 'w') as file:
         file.write('Hello, ' + get_user() + '!\n')
         file.write('Your computer is in danger\n')
         file.write('Please contact your administrator immediately!\n')
